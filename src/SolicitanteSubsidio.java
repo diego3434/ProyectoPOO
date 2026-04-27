@@ -89,21 +89,29 @@ public class SolicitanteSubsidio {
         }
     }
 
-    public static void mostrarReglasSubsidio() {
-        System.out.println("===== Reglas para obtener el subsidio =====");
+    @Override
+    public String toString(){
+        return "====== Datos del solicitante ======\n"+
+                "Nombre: " + nombreCompleto + "\n" +
+                "Cedula: " + cedula + "\n" +
+                "Ingresos mensuales: " + ingresoMensual + "\n" +
+                "Cantidad de vehiculos: " + cantidadVehiculos + "\n" +
+                "Vive en Ecuador:  " + viveEnEcuador;
+    }
+    public  static void mostrarReglasSubsidio(){
+        System.out.println(" ====== Reglas para obtener el subsidio ======");
         System.out.println("1. Tener ingresos mensuales menores o iguales a $1,200.");
-        System.out.println("2. No poseer más de un vehículo registrado.");
+        System.out.println("2. No poseer mas de un vehiculo registrado.");
         System.out.println("3. Tener residencia en Ecuador.");
+        System.out.println("======================================================");
     }
-
-    public double calcularConsumoMensual() {
-        double km = 400;
-        return km / 40;
+    public double calcularConsumoMensual(){
+        double km= 400;
+        return km/40;
     }
-
-    public double calcularConsumoMensual(double kmExtra) {
-        double km = 400 + kmExtra;
-        return km / 40;
+    public double calcularConsumoMensual(double kmExtra){
+        double km=400 + kmExtra;
+        return km/40;
     }
 
 }
